@@ -98,7 +98,7 @@
                             <tr>
                                 <td><?php echo $gasto['data']; ?></td>
                                 <td><?php echo "R$" . number_format($gasto['valor'], 2, ',', '.'); ?></td>
-                                <td><a href="comprovantes/<?php echo str_replace('/', '_', $gasto['data']) ?>.jpg">Comprovante</a></td>
+                                <td><a target="_blank" href="comprovantes/<?php echo str_replace('/', '_', $gasto['data']) ?>.jpg">Comprovante</a></td>
                             </tr>            
                         <?php endforeach; ?>
                     </tbody>
