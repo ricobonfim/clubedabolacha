@@ -106,7 +106,7 @@
             </div>
             <div class="col-md-3">
                 <video autoplay loop id="bob-gif">
-                  <source src="bob-esponja.mp4" type="video/mp4">
+                  <source src="content/gifs/bob-esponja.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
