@@ -14,29 +14,34 @@
     <br/>
     <div class="container-fluid">
     <?php 
-        $ultimosGastos = array();
+        
+        $nomeArquivo = 'dados.json';
+        $contents    = json_decode(file_get_contents($nomeArquivo), true);
+        $ultimosGastos = $contents["gastos"];
+        $saldos = $contents["saldos"];
+        // $ultimosGastos = array();
 
-        $ultimosGastos[] = array(
-            'data' => "04/12/2017",
-            'valor' => 14.92
-        );
+        // $ultimosGastos[] = array(
+        //     'data' => "04/12/2017",
+        //     'valor' => 14.92
+        // );
 
-        $ultimosGastos[] = array(
-            'data' => "06/12/2017",
-            'valor' => 21.43
-        );
+        // $ultimosGastos[] = array(
+        //     'data' => "06/12/2017",
+        //     'valor' => 21.43
+        // );
 
-        $saldos[] = array(
-            'dataFechamento' => "01/12/2017",
-            'totalContribuicoes' => 65,
-            'gastosUltimoFechamento' => 0
-        );
+        // $saldos[] = array(
+        //     'dataFechamento' => "01/12/2017",
+        //     'totalContribuicoes' => 65,
+        //     'gastosUltimoFechamento' => 0
+        // );
 
-        $saldos[] = array(
-            'dataFechamento' => "07/12/2017",
-            'totalContribuicoes' => 35,
-            'gastosUltimoFechamento' => 36.35
-        );
+        // $saldos[] = array(
+        //     'dataFechamento' => "07/12/2017",
+        //     'totalContribuicoes' => 35,
+        //     'gastosUltimoFechamento' => 36.35
+        // );
 
         function getSaldoAtual(array $saldos) : float {
             $total = 0;
