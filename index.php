@@ -26,6 +26,11 @@
             'valor' => 21.43
         );
 
+        $ultimosGastos[] = array(
+            'data' => "12/12/2017",
+            'valor' => 73.32
+        );
+
         $saldos[] = array(
             'dataFechamento' => "01/12/2017",
             'totalContribuicoes' => 65,
@@ -38,6 +43,12 @@
             'gastosUltimoFechamento' => 36.35
         );
 
+        $saldos[] = array(
+            'dataFechamento' => "13/12/2017",
+            'totalContribuicoes' => 32.67,
+            'gastosUltimoFechamento' => 73.32
+        );
+
         function getSaldoAtual(array $saldos) : float {
             $total = 0;
             foreach ($saldos as $saldo) {
@@ -47,7 +58,7 @@
         }
 
         function getSaldoParcial(array $saldos, int $index) : float {
-            $saldosParcial = array_slice($saldos, 0, $index+1);
+            $saldosParcial = array_slice($saldos, 0, count($saldos)-$index);
             $total = 0;
             foreach ($saldosParcial as $saldo) {
                 $total += $saldo['totalContribuicoes']-$saldo['gastosUltimoFechamento'];
