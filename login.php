@@ -3,6 +3,23 @@
     if ($_SESSION && $_SESSION["usuario"]) {
         header('Location:cadastrar.php');
     }
+	if($_POST){
+		if($_POST["parametros"]){
+			$obj = json_decode($_POST["parametros"]);
+			$usuario = $obj->usuario;
+			$senha = $obj->senha;
+			$arquivo = "9d07c616b4eccceaf52e3fbea1ebbf29.txt";
+			$myfile = fopen($arquivo, "r");
+			$ls = preg_split('/\R/', fread($myfile, filesize($arquivo)));
+			if($usuario == $ls[0] && $senha == $ls[1]){
+				session_start();
+				$_SESSION["usuario"] = true;
+				echo json_encode(array('login' => 1));
+			}else{
+				echo json_encode(array('login' => 0));
+			}
+		}
+	}
 ?>
 <head>
     <title>Login - Controle da caixinha</title>
@@ -53,7 +70,7 @@
             if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
                 var retorno = JSON.parse(xhr.response);
                 if(retorno.login){
-                    window.location.replace('cadastrar.php');
+                    window.location.replace('login.php');
                 }else{
                     $('#modalErro').modal();
                 }
