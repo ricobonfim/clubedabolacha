@@ -42,11 +42,11 @@
         //     'gastosUltimoFechamento' => 36.35
         // );
 
-        $saldos[] = array(
-            'dataFechamento' => "13/12/2017",
-            'totalContribuicoes' => 32.67,
-            'gastosUltimoFechamento' => 73.32
-        );
+        // $saldos[] = array(
+            // 'dataFechamento' => "13/12/2017",
+            // 'totalContribuicoes' => 32.67,
+            // 'gastosUltimoFechamento' => 73.32
+        // );
 
         function getSaldoAtual(array $saldos) : float {
             $total = 0;

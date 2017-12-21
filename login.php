@@ -14,9 +14,9 @@
 			if($usuario == $ls[0] && $senha == $ls[1]){
 				session_start();
 				$_SESSION["usuario"] = true;
-				echo json_encode(array('login' => 1));
+				echo json_encode(array('login' => 1));die;
 			}else{
-				echo json_encode(array('login' => 0));
+				echo json_encode(array('login' => 0));die;
 			}
 		}
 	}
@@ -63,12 +63,13 @@
         var u = document.getElementById("usuario").value;
         var s = document.getElementById("senha").value;
         var xhr = new XMLHttpRequest();
-        var url = "logar.php";
+        var url = "login.php";
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhr.onreadystatechange = function() {//Call a function when the state changes.
             if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
                 var retorno = JSON.parse(xhr.response);
+				console.log(retorno);
                 if(retorno.login){
                     window.location.replace('login.php');
                 }else{
