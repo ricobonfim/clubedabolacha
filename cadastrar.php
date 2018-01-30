@@ -14,7 +14,7 @@ if(!$_SESSION["usuario"])
         $obj = array("data" => $data["data"], "valor" => floatval(str_replace(',', '.', $data["valor"])));
         array_push($contents["gastos"], $obj);
         $imagem = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $data["imagem"]));
-        file_put_contents('comprovantes/'.str_replace("/", "_", $data["data"]).'.jpeg', $imagem);
+        file_put_contents('comprovantes/'.str_replace("/", "_", $data["data"]).'.jpg', $imagem);
     }
     fwrite($myfile, json_encode($contents));
     fclose($myfile);
