@@ -2,7 +2,7 @@
 <head>
     <title>Controle da caixinha</title>
     <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="content/css/bootstrap.min.css">
 
     <style type="text/css">
         #bob-gif {
@@ -19,34 +19,6 @@
         $contents    = json_decode(file_get_contents($nomeArquivo), true);
         $ultimosGastos = $contents["gastos"];
         $saldos = $contents["saldos"];
-        // $ultimosGastos = array();
-
-        // $ultimosGastos[] = array(
-        //     'data' => "04/12/2017",
-        //     'valor' => 14.92
-        // );
-
-        // $ultimosGastos[] = array(
-        //     'data' => "06/12/2017",
-        //     'valor' => 21.43
-        // );
-
-        // $saldos[] = array(
-        //     'dataFechamento' => "01/12/2017",
-        //     'totalContribuicoes' => 65,
-        //     'gastosUl
-
-        // $saldos[] = array(
-        //     'dataFechamento' => "07/12/2017",
-        //     'totalContribuicoes' => 35,
-        //     'gastosUltimoFechamento' => 36.35
-        // );
-
-        // $saldos[] = array(
-            // 'dataFechamento' => "13/12/2017",
-            // 'totalContribuicoes' => 32.67,
-            // 'gastosUltimoFechamento' => 73.32
-        // );
 
         function getSaldoAtual(array $saldos) : float {
             $total = 0;
@@ -94,7 +66,7 @@
 
         <h4>Últimos gastos</h4>
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-12">
                 <table class='table table-hover'>
                     <thead>
                         <tr>
@@ -114,15 +86,7 @@
                     </tbody>
                 </table>                
             </div>
-            <div class="col-md-3">
-                <video autoplay loop id="bob-gif">
-                  <source src="content/gifs/bob-esponja.mp4" type="video/mp4">
-                </video>
-            </div>
         </div>
-
-
-
     </div>
 </body>
 </html>

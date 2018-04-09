@@ -24,7 +24,7 @@ if(!$_SESSION["usuario"])
 <head>
     <title>Cadastro - Controle da caixinha</title>
     <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="content/css/bootstrap.min.css">
 </head>
 <div class="container-fluid">
     <div class="dropdown">
